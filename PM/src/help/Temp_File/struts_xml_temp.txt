@@ -1,0 +1,24 @@
+<!-- VoTest's action -->
+         <action name="showAllVoTests" class="cn.hero.action.ActionVoTest" method="showAllVoTests">
+            <result name="success">/WEB-INF/TPM_JSP/VoTest/showVoTests.jsp</result>
+        </action>
+        <action name="showMyVoTests" class="cn.hero.action.ActionVoTest" method="showMyVoTests">
+            <result name="success">/WEB-INF/TPM_JSP/VoTest/showVoTests.jsp</result>
+        </action>
+         <action name="queryVoTest" class="cn.hero.action.ActionVoTest" method="queryVoTest">
+            <result name="success">/WEB-INF/TPM_JSP/VoTest/showVoTests.jsp</result>
+        </action>
+        <action name="gotoAddVoTest" class="cn.hero.action.ActionVoTest" method="gotoAddVoTest">
+            <result name="success">/WEB-INF/TPM_JSP/VoTest/addVoTest.jsp</result>
+        </action>
+        <action name="addVoTest" class="cn.hero.action.ActionVoTest" method="addVoTest">
+            <result name="success">showSucc.jsp</result>
+            <result name="input" >/WEB-INF/TPM_JSP/VoTest/addVoTest.jsp</result>
+        </action>
+        <action name="gotoEditVoTest" class="cn.hero.action.ActionVoTest" method="gotoEditVoTest">
+            <result name="success">/WEB-INF/TPM_JSP/VoTest/editVoTest.jsp</result>
+        </action>
+        <action name="editVoTest" class="cn.hero.action.ActionVoTest" method="editVoTest">
+            <result name="success">showSucc.jsp</result>            
+            <result name="input" >/WEB-INF/TPM_JSP/VoTest/editVoTest.jsp</result>            
+        </action>

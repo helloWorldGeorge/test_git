@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+   <constant name="struts.configuration.xml.reload" value="true"/>
+   <constant name="struts.devMode" value="true"/>
+   <constant name="struts.i18n.encoding" value="UTF-8"/>
+   <!-- 出错模块 -->
+   <package name="all" namespace="" extends="tiles-default">
+      <global-results>
+         <result name="error">/error.jsp</result>
+         <result name="construction">/construction.jsp</result>
+      </global-results>
+      <action name="under_construction">
+        <result >/construction.jsp</result>
+       </action>
+   </package>
+   
+   <!-- 初始化模块 -->
+   <package name="init" namespace="/" extends="all">
+        <action name="createNewVo" class="cn.hero.action.ActionVoHelp" method="createNewVo">
+            <result name="success">/WEB-INF/TPM_JSP/VoVerPlan/showVoVerPlans.jsp</result>
+        </action>
+          <!-- VoUser 的增删改查 -->
+         <action name="login" class="cn.hero.action.ActionVoUser" method="login">
+            <result name="success">/index.jsp</result>
+        </action>
+         <action name="showAllVoUsers" class="cn.hero.action.ActionVoUser" method="showAllVoUsers">
+            <result name="success">/WEB-INF/TPM_JSP/VoUser/showVoUsers.jsp</result>
+        </action>
+         <action name="queryVoUser" class="cn.hero.action.ActionVoUser" method="queryVoUser">
+            <result name="success">/WEB-INF/TPM_JSP/VoUser/showVoUsers.jsp</result>
+        </action>
+        <action name="gotoAddVoUser" class="cn.hero.action.ActionVoUser" method="gotoAddVoUser">
+            <result name="success">/WEB-INF/TPM_JSP/VoUser/addVoUser.jsp</result>
+        </action>
+        <action name="addVoUser" class="cn.hero.action.ActionVoUser" method="addVoUser">
+             <result name="success">/login.jsp</result>
+             <result name="input">/WEB-INF/TPM_JSP/VoUser/addVoUser.jsp</result>
+        </action>
+        <action name="gotoEditVoUser" class="cn.hero.action.ActionVoUser" method="gotoEditVoUser">
+            <result name="success">/WEB-INF/TPM_JSP/VoUser/editVoUser.jsp</result>
+        </action>
+        <action name="editVoUser" class="cn.hero.action.ActionVoUser" method="editVoUser">
+            <result type="redirectAction" >showAllVoUsers</result>
+            <result name="input">/WEB-INF/TPM_JSP/VoUser/editVoUser.jsp</result>
+        </action>
+        
+
+<!-- add_VoTTTTT -->
+<!-- VoZHANGTAO's action -->
+         <action name="showAllVoZHANGTAOs" class="cn.hero.action.ActionVoZHANGTAO" method="showAllVoZHANGTAOs">
+            <result name="success">/WEB-INF/TPM_JSP/VoZHANGTAO/showVoZHANGTAOs.jsp</result>
+        </action>
+        <action name="showMyVoZHANGTAOs" class="cn.hero.action.ActionVoZHANGTAO" method="showMyVoZHANGTAOs">
+            <result name="success">/WEB-INF/TPM_JSP/VoZHANGTAO/showVoZHANGTAOs.jsp</result>
+        </action>
+         <action name="queryVoZHANGTAO" class="cn.hero.action.ActionVoZHANGTAO" method="queryVoZHANGTAO">
+            <result name="success">/WEB-INF/TPM_JSP/VoZHANGTAO/showVoZHANGTAOs.jsp</result>
+        </action>
+        <action name="gotoAddVoZHANGTAO" class="cn.hero.action.ActionVoZHANGTAO" method="gotoAddVoZHANGTAO">
+            <result name="success">/WEB-INF/TPM_JSP/VoZHANGTAO/addVoZHANGTAO.jsp</result>
+        </action>
+        <action name="addVoZHANGTAO" class="cn.hero.action.ActionVoZHANGTAO" method="addVoZHANGTAO">
+            <result name="success">showSucc.jsp</result>
+            <result name="input" >/WEB-INF/TPM_JSP/VoZHANGTAO/addVoZHANGTAO.jsp</result>
+        </action>
+        <action name="gotoEditVoZHANGTAO" class="cn.hero.action.ActionVoZHANGTAO" method="gotoEditVoZHANGTAO">
+            <result name="success">/WEB-INF/TPM_JSP/VoZHANGTAO/editVoZHANGTAO.jsp</result>
+        </action>
+        <action name="editVoZHANGTAO" class="cn.hero.action.ActionVoZHANGTAO" method="editVoZHANGTAO">
+            <result name="success">showSucc.jsp</result>            
+            <result name="input" >/WEB-INF/TPM_JSP/VoZHANGTAO/editVoZHANGTAO.jsp</result>            
+        </action>
+<!-- VoProgramInfo's action -->
+         <action name="showAllVoProgramInfos" class="cn.hero.action.ActionVoProgramInfo" method="showAllVoProgramInfos">
+            <result name="success">/WEB-INF/TPM_JSP/VoProgramInfo/showVoProgramInfos.jsp</result>
+        </action>
+        <action name="showMyVoProgramInfos" class="cn.hero.action.ActionVoProgramInfo" method="showMyVoProgramInfos">
+            <result name="success">/WEB-INF/TPM_JSP/VoProgramInfo/showVoProgramInfos.jsp</result>
+        </action>
+         <action name="queryVoProgramInfo" class="cn.hero.action.ActionVoProgramInfo" method="queryVoProgramInfo">
+            <result name="success">/WEB-INF/TPM_JSP/VoProgramInfo/showVoProgramInfos.jsp</result>
+        </action>
+        <action name="gotoAddVoProgramInfo" class="cn.hero.action.ActionVoProgramInfo" method="gotoAddVoProgramInfo">
+            <result name="success">/WEB-INF/TPM_JSP/VoProgramInfo/addVoProgramInfo.jsp</result>
+        </action>
+        <action name="addVoProgramInfo" class="cn.hero.action.ActionVoProgramInfo" method="addVoProgramInfo">
+            <result name="success">showSucc.jsp</result>
+            <result name="input" >/WEB-INF/TPM_JSP/VoProgramInfo/addVoProgramInfo.jsp</result>
+        </action>
+        <action name="gotoEditVoProgramInfo" class="cn.hero.action.ActionVoProgramInfo" method="gotoEditVoProgramInfo">
+            <result name="success">/WEB-INF/TPM_JSP/VoProgramInfo/editVoProgramInfo.jsp</result>
+        </action>
+        <action name="editVoProgramInfo" class="cn.hero.action.ActionVoProgramInfo" method="editVoProgramInfo">
+            <result name="success">showSucc.jsp</result>            
+            <result name="input" >/WEB-INF/TPM_JSP/VoProgramInfo/editVoProgramInfo.jsp</result>            
+        </action>
+
+    </package>
+</struts>    

@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+#login-1 {
+	background-color: #EBEEFA;
+}
+#login-1 #login_1_from {
+	
+	width: 600px;
+	border: 4px double #A7B8FE;
+	background-color: #ebeefa;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-left: auto;
+}

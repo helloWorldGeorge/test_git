@@ -1,0 +1,17 @@
+package cn.hero.service;
+
+import cn.hero.vo.VoUser;
+import cn.hero.vo.VoVVVVV;
+import java.util.List;
+
+public interface ServiceVoVVVVV  {
+
+	void addVoVVVVV(VoVVVVV voVVVVV, VoUser voUser);
+
+	void deleteVoVVVVV(VoVVVVV voVVVVV, VoUser voUser);
+
+	void editVoVVVVV(VoVVVVV voVVVVV, VoUser voUser,String editString);
+	
+	List<VoVVVVV> queryVoVVVVV(String queryString);
+
+} 

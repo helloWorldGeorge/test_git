@@ -1,0 +1,119 @@
+package cn.hero.action;
+import java.util.Date;
+import java.util.List;
+import javax.annotation.Resource;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import com.opensymphony.xwork2.ModelDriven;
+import cn.hero.service.ServiceVoVVVVV;
+import cn.hero.vo.VoUser;
+import cn.hero.vo.VoVVVVV;
+
+@Component
+@Scope(value="prototype")
+public class ActionVoVVVVV extends SuperAction implements ModelDriven<VoVVVVV>{
+	private static final long serialVersionUID = 1L;
+	private ServiceVoVVVVV implServiceVoVVVVV ;
+	private VoVVVVV voVVVVV = new VoVVVVV();
+	private String queryString;
+	
+	public ServiceVoVVVVV getImplServiceVoVVVVV() {
+		return implServiceVoVVVVV;
+	}
+
+	@Resource
+	public void setImplServiceVoVVVVV(ServiceVoVVVVV implServiceVoVVVVV) {
+		this.implServiceVoVVVVV = implServiceVoVVVVV;
+	}
+
+	public String getQueryString() {
+		return queryString;
+	}
+
+	public void setQueryString(String queryString) {
+		this.queryString = queryString;
+	}
+
+	public VoVVVVV getModel() {
+		// TODO Auto-generated method stub
+		return voVVVVV;
+	}
+	
+	public VoUser getLoginUser()
+	{
+		return (VoUser) request.getSession().getAttribute("loginUser");
+	}
+	
+	
+	//1、增：前往添加
+	public String gotoAddVoVVVVV()
+	{
+		//Action_gotoAddandEdit
+		return SUCCESS;	
+	}
+	
+	//1、增：保存添加
+	public String addVoVVVVV()
+	{
+		implServiceVoVVVVV.addVoVVVVV(voVVVVV,this.getLoginUser());
+		return SUCCESS;
+	}
+		
+	//2、删：删除
+	public String deleteVoVVVVV()
+	{
+//		implServiceVoVVVVV.deleteVoVVVVV(voVVVVV,this.getLoginUser());
+		return ERROR;
+	}
+	
+	//3、改：前往编辑页面
+	public String gotoEditVoVVVVV()
+	{		
+		//Action_gotoAddandEdit
+		voVVVVV = super.get(VoVVVVV.class, voVVVVV.getId());
+		request.setAttribute("voVVVVV", voVVVVV);
+		return SUCCESS;
+	}
+	//3、改：保存编辑
+	public String editVoVVVVV()
+	{
+		VoVVVVV vc = super.get(VoVVVVV.class, voVVVVV.getId());
+		implServiceVoVVVVV.editVoVVVVV(voVVVVV,this.getLoginUser(),"editVoVVVVV");		
+		return SUCCESS;
+	}
+		
+	//4、查：查看详细	
+	public String getVoVVVVVContents()
+	{
+		voVVVVV = super.get(VoVVVVV.class, voVVVVV.getId());		
+		request.setAttribute("voVVVVV", voVVVVV);
+		return SUCCESS;
+	}
+	
+	//5、查:查询自己的内容
+	public String showMyVoVVVVVs()
+	{
+		String hql = "from VoVVVVV vp where vp.voUser.id ="+this.getLoginUser().getId();		
+		List<VoVVVVV> voVVVVVs = super.find(hql);
+		request.setAttribute("voVVVVVs", voVVVVVs);
+		return SUCCESS;
+	}
+	
+	//6、查:查询所有的内容
+	public String showAllVoVVVVVs()
+	{
+		List<VoVVVVV> voVVVVVs = super.find("from VoVVVVV");
+		request.setAttribute("voVVVVVs", voVVVVVs);
+		return SUCCESS;	
+	}
+	
+	//6、查：带模糊参数查询
+	public String queryVoVVVVV()
+	{
+		request.setAttribute("voVVVVVs", super.find("from VoVVVVV"));
+		List<VoVVVVV> queryVoVVVVVs = implServiceVoVVVVV.queryVoVVVVV(queryString);
+		request.setAttribute("voVVVVVs", queryVoVVVVVs);
+		return SUCCESS;
+	}
+	
+}

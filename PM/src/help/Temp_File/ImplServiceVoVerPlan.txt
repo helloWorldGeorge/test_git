@@ -1,0 +1,56 @@
+package cn.hero.service.impl;
+import java.util.Date;
+import javax.annotation.Resource;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import cn.hero.service.ServiceVoVVVVV;
+import cn.hero.vo.VoUser;
+import cn.hero.vo.VoVVVVV;
+import cn.hero.vo.VoVVVVV_Log;
+import java.util.List;
+
+@Component
+public class ImplServiceVoVVVVV extends ImplSuperService implements ServiceVoVVVVV{
+	
+	@Transactional
+	public void addVoVVVVV(VoVVVVV voVVVVV,VoUser voUser) {
+		super.save(voVVVVV);
+		this.saveLog(voVVVVV,"addVoVVVVV",voUser);
+	}
+	
+	@Transactional
+	public void deleteVoVVVVV(VoVVVVV voVVVVV,VoUser voUser) {
+		this.saveLog(voVVVVV, "deleteVoVVVVV", voUser);
+		super.delete(voVVVVV);
+	}
+	
+	@Transactional
+	public void editVoVVVVV(VoVVVVV  voVVVVV,VoUser voUser,String editString) {
+		super.update(voVVVVV);
+		this.saveLog(voVVVVV,editString,voUser);
+	}
+	
+	private void saveLog(VoVVVVV voVVVVV,String log_Remark,VoUser voUser) {
+		VoVVVVV_Log voVVVVV_Log = new VoVVVVV_Log();	
+		if(voVVVVV==null)
+		{
+			voVVVVV = new VoVVVVV();
+		}
+		voVVVVV_Log.setLog_Remark(log_Remark);
+		voVVVVV_Log.setLog_Date(new Date());
+		voVVVVV_Log.setLog_user(voUser);
+		voVVVVV_Log.setVoVVVVV_id(voVVVVV.getId());
+		//Service_saveLog
+		super.save(voVVVVV_Log);
+	}
+	
+	public List<VoVVVVV> queryVoVVVVV(String queryString) {
+		if(queryString==null || "".equals(queryString.trim()))
+		{
+			return null;
+		}
+		StringBuffer hql=new StringBuffer("from VoVVVVV where ");
+		//implService_queryString
+		return super.find(hql.toString());
+	}
+}

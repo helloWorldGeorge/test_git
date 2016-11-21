@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+        "//www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+        <!-- 框架校验部分 -->
+<validators>
+	<field name="verProduct">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>verProduct is required</message>
+		</field-validator>
+	</field>
+	<field name="verOR">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>verOR is required</message>
+		</field-validator>
+	</field>
+<!--
+	<field name="password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>password is required</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name ="minLength">6</param>
+			<param name ="maxLength">10</param>
+			<message>
+				password should between ${minLength} to ${maxLength}
+			</message>
+		</field-validator>
+
+	</field>
+	<field name="repassword">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>repassword is required</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name ="minLength">6</param>
+			<param name ="maxLength">10</param>
+			<message>
+				repassword should between ${minLength} to ${maxLength}
+			</message>
+		</field-validator>
+	</field>
+
+	<field name="age">
+		<field-validator type="int">
+			<param name ="min">1</param>
+			<param name ="max">150</param>
+			<message>age should between ${min} to ${max}</message>
+		</field-validator>
+	</field>
+	
+	<field name="birthday">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>birthday is required</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name ="min">2000-1-1</param>
+			<param name ="max">2010-12-31</param>
+			<message>birthday should between ${min} to ${max}</message>
+		</field-validator>
+
+	</field>
+
+	<field name="graduation">		
+		<field-validator type="requiredstring">			
+			<param name="trim">true</param>			
+			<message>graduation is required</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name ="min">2000-1-1</param>
+			<param name ="max">2010-12-31</param>
+			<message>
+				graduation should between ${min} to ${max}
+			</message>
+		</field-validator>
+
+	</field>
+-->
+</validators>
