@@ -49,6 +49,30 @@
         
 
 <!-- add_VoTTTTT -->
+<!-- VoProTask's action -->
+         <action name="showAllVoProTasks" class="cn.hero.action.ActionVoProTask" method="showAllVoProTasks">
+            <result name="success">/WEB-INF/TPM_JSP/VoProTask/showVoProTasks.jsp</result>
+        </action>
+        <action name="showMyVoProTasks" class="cn.hero.action.ActionVoProTask" method="showMyVoProTasks">
+            <result name="success">/WEB-INF/TPM_JSP/VoProTask/showVoProTasks.jsp</result>
+        </action>
+         <action name="queryVoProTask" class="cn.hero.action.ActionVoProTask" method="queryVoProTask">
+            <result name="success">/WEB-INF/TPM_JSP/VoProTask/showVoProTasks.jsp</result>
+        </action>
+        <action name="gotoAddVoProTask" class="cn.hero.action.ActionVoProTask" method="gotoAddVoProTask">
+            <result name="success">/WEB-INF/TPM_JSP/VoProTask/addVoProTask.jsp</result>
+        </action>
+        <action name="addVoProTask" class="cn.hero.action.ActionVoProTask" method="addVoProTask">
+            <result name="success">showSucc.jsp</result>
+            <result name="input" >/WEB-INF/TPM_JSP/VoProTask/addVoProTask.jsp</result>
+        </action>
+        <action name="gotoEditVoProTask" class="cn.hero.action.ActionVoProTask" method="gotoEditVoProTask">
+            <result name="success">/WEB-INF/TPM_JSP/VoProTask/editVoProTask.jsp</result>
+        </action>
+        <action name="editVoProTask" class="cn.hero.action.ActionVoProTask" method="editVoProTask">
+            <result name="success">showSucc.jsp</result>            
+            <result name="input" >/WEB-INF/TPM_JSP/VoProTask/editVoProTask.jsp</result>            
+        </action>
 <!-- VoZHANGTAO's action -->
          <action name="showAllVoZHANGTAOs" class="cn.hero.action.ActionVoZHANGTAO" method="showAllVoZHANGTAOs">
             <result name="success">/WEB-INF/TPM_JSP/VoZHANGTAO/showVoZHANGTAOs.jsp</result>
