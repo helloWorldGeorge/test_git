@@ -22,3 +22,6 @@
             <result name="success">showSucc.jsp</result>            
             <result name="input" >/WEB-INF/TPM_JSP/VoTest/editVoTest.jsp</result>            
         </action>
+         <action name="getVoTestDetails" class="cn.hero.action.ActionVoTest" method="getVoTestDetails">
+            <result name="success" >/WEB-INF/TPM_JSP/VoTest/getVoTestDetails.jsp</result>            
+        </action>

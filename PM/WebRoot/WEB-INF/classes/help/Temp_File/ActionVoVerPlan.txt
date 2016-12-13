@@ -83,7 +83,7 @@ public class ActionVoVVVVV extends SuperAction implements ModelDriven<VoVVVVV>{
 	}
 		
 	//4、查：查看详细	
-	public String getVoVVVVVContents()
+	public String getVoVVVVVDetails()
 	{
 		voVVVVV = super.get(VoVVVVV.class, voVVVVV.getId());		
 		request.setAttribute("voVVVVV", voVVVVV);

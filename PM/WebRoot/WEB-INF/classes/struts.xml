@@ -9,19 +9,16 @@
    <!-- 出错模块 -->
    <package name="all" namespace="" extends="tiles-default">
       <global-results>
-         <result name="error">/error.jsp</result>
-         <result name="construction">/construction.jsp</result>
+         <result name="error">/ErrorPage/error.jsp</result>
+         <result name="construction">/ErrorPage/construction.jsp</result>
       </global-results>
       <action name="under_construction">
-        <result >/construction.jsp</result>
+        <result >/ErrorPage/construction.jsp</result>
        </action>
    </package>
    
    <!-- 初始化模块 -->
    <package name="init" namespace="/" extends="all">
-        <action name="createNewVo" class="cn.hero.action.ActionVoHelp" method="createNewVo">
-            <result name="success">/WEB-INF/TPM_JSP/VoVerPlan/showVoVerPlans.jsp</result>
-        </action>
           <!-- VoUser 的增删改查 -->
          <action name="login" class="cn.hero.action.ActionVoUser" method="login">
             <result name="success">/index.jsp</result>
@@ -73,6 +70,9 @@
             <result name="success">showSucc.jsp</result>            
             <result name="input" >/WEB-INF/TPM_JSP/VoProTask/editVoProTask.jsp</result>            
         </action>
+         <action name="getVoProTaskDetails" class="cn.hero.action.ActionVoProTask" method="getVoProTaskDetails">
+            <result name="success" >/WEB-INF/TPM_JSP/VoProTask/getVoProTaskDetails.jsp</result>            
+        </action>
 <!-- VoZHANGTAO's action -->
          <action name="showAllVoZHANGTAOs" class="cn.hero.action.ActionVoZHANGTAO" method="showAllVoZHANGTAOs">
             <result name="success">/WEB-INF/TPM_JSP/VoZHANGTAO/showVoZHANGTAOs.jsp</result>
@@ -120,6 +120,9 @@
         <action name="editVoProgramInfo" class="cn.hero.action.ActionVoProgramInfo" method="editVoProgramInfo">
             <result name="success">showSucc.jsp</result>            
             <result name="input" >/WEB-INF/TPM_JSP/VoProgramInfo/editVoProgramInfo.jsp</result>            
+        </action>
+        <action name="getVoProgramInfoDetails" class="cn.hero.action.ActionVoProgramInfo" method="getVoProgramInfoDetails">
+            <result name="success" >/WEB-INF/TPM_JSP/VoProgramInfo/getVoProgramInfoDetails.jsp</result>            
         </action>
 
     </package>

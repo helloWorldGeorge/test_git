@@ -32,14 +32,24 @@
 	}); 
 </script>
 <style type="text/css">
-<!--
 .OLD_TXT {color: #999999}
--->
+table.remark_table {
+	border: 1px solid lightsteelblue;
+	padding: 0;
+	border-collapse: collapse;
+	word-break: break-all;
+}
+
+table.remark_table td,th {
+	border: 1px solid lightsteelblue;
+	font-size: 12px;
+	padding: 3px 3px 3px 8px;
+}
 </style>
 </head>
 
 <body>
-<s:form action="editVoVVVVV.action" method="post">
+<s:form action="editVoVVVVV.action" theme="simple" method="post">
 <table class="remark_table" style="width: 100%">
 <tr>
 	<th>属性</th>

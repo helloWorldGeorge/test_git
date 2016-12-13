@@ -77,10 +77,10 @@ table.remark_table td,th {
 				<td>
 					<div align="center">
 						<span class="STYLE4"> 
-							<s:url id="getVoVVVVVContents" action="getVoVVVVVContents.action">
+							<s:url id="getVoVVVVVDetails" action="getVoVVVVVDetails.action">
 								<s:param name="id" value="#voVVVVV.id" />
 							</s:url> 
-							<s:a href="%{getVoVVVVVContents}">查看详细</s:a>
+							<s:a href="%{getVoVVVVVDetails}">查看详细</s:a>
 							<!-- ignore privilege s:if test="1 in %{#request.session.pris}"> -->
 							<s:url id="gotoEditVoVVVVV" action="gotoEditVoVVVVV.action">
 								<s:param name="id" value="#voVVVVV.id" />
